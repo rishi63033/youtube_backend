@@ -11,7 +11,6 @@ router.get('/', async (req, res) => {
   try {
     // 1. Fetch all video IDs from MongoDB
     const videos = await Video.find({});
-    console.log('Fetched videos from MongoDB:', videos);
 
     // 2. For each video, fetch metadata from YouTube API
     const enrichedVideos = await Promise.all(
