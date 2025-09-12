@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     // 2. For each video, fetch metadata from YouTube API
     const enrichedVideos = await Promise.all(
       videos.map(async (video) => {
-        const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${video.videoId}&key=${YOUTUBE_API_KEY}`;
+        const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${video.videoId}&key=${YOUTUBE_API_KEY}`;  //{======API KEY PASTE=========}
         const response = await axios.get(url);
         const data = response.data.items[0];
 
